@@ -13,58 +13,101 @@
         padding: 0;
         background-color: #B00020; /* Fondo rojo */
         font-family: 'Bebas Neue', sans-serif;
+
+        /* Layout móvil completo */
         display: flex;
         flex-direction: column;
+        justify-content: space-between; /* clave */
         align-items: center;
-        justify-content: flex-start;
+
         min-height: 100vh;
         text-align: center;
+        overflow: hidden;
+    }
+
+    /* Banda negra superior estilo Persona */
+    .top-bar {
+        width: 100%;
+        height: 20px;
+        background: black;
+        transform: skewY(-2deg);
+        margin-bottom: 20px;
     }
 
     img {
-        margin-top: 40px;
-        max-width: 80%;
+        max-width: 75%;
         height: auto;
+        margin-top: 20px;
+        filter: drop-shadow(6px 6px 0 black);
     }
 
     p {
         color: black;
-        font-size: 28px;
-        margin: 40px 20px 30px;
-        max-width: 800px;
+        font-size: 30px;
+        margin: 30px 20px;
+        letter-spacing: 1px;
+    }
+
+    .boton-container {
+        margin-bottom: 40px;
     }
 
     button {
         background-color: #C3002F; /* Rojo más oscuro */
         color: black;
-        font-size: 26px;
-        padding: 15px 80px;
+        font-size: 28px;
+        padding: 18px 90px;
         border: none;
         cursor: pointer;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
+
+        /* Estilo Phantom */
+        transform: skewX(-10deg);
+        box-shadow: 6px 6px 0 black;
+
         transition: transform 0.1s ease, background-color 0.2s ease;
+    }
+
+    button span {
+        display: inline-block;
+        transform: skewX(10deg); /* corrige el texto */
     }
 
     button:hover {
         background-color: #A00025;
-        transform: scale(1.05);
+        transform: skewX(-10deg) scale(1.05);
+    }
+
+    /* Banda negra inferior */
+    .bottom-bar {
+        width: 100%;
+        height: 25px;
+        background: black;
+        transform: skewY(2deg);
     }
 </style>
 </head>
 <body>
 
-    <!-- Imagen superior -->
-    <img src="Phantom_Thieves_Logo.webp" alt="Imagen principal">
+    <div class="top-bar"></div>
 
-    <!-- Texto -->
+    <!-- Imagen superior -->
+    <img src="Phantom_Thieves_Logo.webp" alt="Phantom Thieves">
+
+    <!-- Texto central -->
     <p>
-        Welcome, thieve. What is today's goal?
+        Welcome, thief.<br>
+        What is today’s goal?
     </p>
 
-    <!-- Botón -->
-    <button onclick="window.location.href='siguiente.html'">
-        Browse
-    </button>
+    <!-- Botón inferior -->
+    <div class="boton-container">
+        <button onclick="window.location.href='siguiente.html'">
+            <span>Browse</span>
+        </button>
+    </div>
+
+    <div class="bottom-bar"></div>
 
 </body>
 </html>
