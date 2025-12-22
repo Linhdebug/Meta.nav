@@ -1,0 +1,20 @@
+{
+  "name": "Metaverse navigation",
+  "short_name": "MetaNav",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#B00020",
+  "theme_color": "#B00020",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
