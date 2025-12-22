@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Navegar</title>
+
+<!-- Fuente estilo Persona 5 -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #B00020; /* Fondo rojo */
+        font-family: 'Bebas Neue', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    img {
+        margin-top: 40px;
+        max-width: 80%;
+        height: auto;
+    }
+
+    p {
+        color: black;
+        font-size: 28px;
+        margin: 40px 20px 30px;
+        max-width: 800px;
+    }
+
+    button {
+        background-color: #C3002F; /* Rojo más oscuro */
+        color: black;
+        font-size: 26px;
+        padding: 15px 80px;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 2px;
+        transition: transform 0.1s ease, background-color 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #A00025;
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+
+    <!-- Imagen superior -->
+    <img src="take.png" alt="Imagen principal">
+
+    <!-- Texto -->
+    <p>
+        Este es un mensaje predeterminado.  
+        Nada aquí es casual. Cada decisión tiene un peso.
+    </p>
+
+    <!-- Botón -->
+    <button onclick="window.location.href='siguiente.html'">
+        Navegar
+    </button>
+
+</body>
+</html>
