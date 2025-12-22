@@ -11,7 +11,7 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: #B00020; /* Fondo rojo */
+        background-color: #B00020;
         font-family: 'Bebas Neue', sans-serif;
         display: flex;
         flex-direction: column;
@@ -23,20 +23,25 @@
         position: relative;
     }
 
-    /* Líneas diagonales Phantom Thieves */
+    /* Animación de líneas diagonales */
+    @keyframes moverDiagonal {
+        0% { left: -50%; }
+        50% { left: -45%; }
+        100% { left: -50%; }
+    }
+
     .diagonal {
         position: absolute;
         width: 200%;
         height: 3px;
         background: black;
-        transform: rotate(-15deg);
-        top: 20%;
-        left: -50%;
         opacity: 0.3;
+        z-index: 0;
+        animation: moverDiagonal 3s infinite alternate;
     }
-    .diagonal:nth-child(2) { top: 35%; transform: rotate(-12deg); }
-    .diagonal:nth-child(3) { top: 50%; transform: rotate(-18deg); }
-    .diagonal:nth-child(4) { top: 65%; transform: rotate(-10deg); }
+    .diagonal:nth-child(2) { top: 25%; transform: rotate(-12deg); animation-duration: 2.8s; }
+    .diagonal:nth-child(3) { top: 45%; transform: rotate(-18deg); animation-duration: 3.2s; }
+    .diagonal:nth-child(4) { top: 65%; transform: rotate(-10deg); animation-duration: 3.5s; }
 
     img {
         max-width: 75%;
@@ -47,13 +52,20 @@
         position: relative;
     }
 
+    /* Parpadeo sutil del texto */
+    @keyframes parpadeo {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.85; }
+    }
+
     p {
         color: black;
-        font-size: 40px; /* más grande */
+        font-size: 42px;
         margin: 30px 20px;
         letter-spacing: 1px;
         z-index: 1;
         position: relative;
+        animation: parpadeo 2s infinite;
     }
 
     .boton-container {
@@ -62,7 +74,6 @@
         position: relative;
     }
 
-    /* Botón estilo recorte de periódico */
     button {
         background-color: #C3002F;
         color: black;
@@ -70,7 +81,7 @@
         padding: 18px 90px;
         border: 4px solid black;
         border-radius: 4px;
-        text-shadow: 1px 1px 0 #fff;
+        text-shadow: 1px 1px 0 white;
         cursor: pointer;
         letter-spacing: 3px;
         transform: skewX(-8deg);
@@ -90,7 +101,6 @@
         box-shadow: 8px 8px 0 black;
     }
 
-    /* Top & Bottom bars */
     .top-bar, .bottom-bar {
         width: 100%;
         height: 20px;
@@ -107,7 +117,7 @@
 
     <div class="top-bar"></div>
 
-    <!-- Líneas diagonales -->
+    <!-- Líneas diagonales animadas -->
     <div class="diagonal"></div>
     <div class="diagonal"></div>
     <div class="diagonal"></div>
