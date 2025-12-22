@@ -13,83 +13,105 @@
         padding: 0;
         background-color: #B00020; /* Fondo rojo */
         font-family: 'Bebas Neue', sans-serif;
-
-        /* Layout móvil completo */
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* clave */
+        justify-content: space-between;
         align-items: center;
-
         min-height: 100vh;
         text-align: center;
         overflow: hidden;
+        position: relative;
     }
 
-    /* Banda negra superior estilo Persona */
-    .top-bar {
-        width: 100%;
-        height: 20px;
+    /* Líneas diagonales Phantom Thieves */
+    .diagonal {
+        position: absolute;
+        width: 200%;
+        height: 3px;
         background: black;
-        transform: skewY(-2deg);
-        margin-bottom: 20px;
+        transform: rotate(-15deg);
+        top: 20%;
+        left: -50%;
+        opacity: 0.3;
     }
+    .diagonal:nth-child(2) { top: 35%; transform: rotate(-12deg); }
+    .diagonal:nth-child(3) { top: 50%; transform: rotate(-18deg); }
+    .diagonal:nth-child(4) { top: 65%; transform: rotate(-10deg); }
 
     img {
         max-width: 75%;
         height: auto;
         margin-top: 20px;
         filter: drop-shadow(6px 6px 0 black);
+        z-index: 1;
+        position: relative;
     }
 
     p {
         color: black;
-        font-size: 30px;
+        font-size: 40px; /* más grande */
         margin: 30px 20px;
         letter-spacing: 1px;
+        z-index: 1;
+        position: relative;
     }
 
     .boton-container {
         margin-bottom: 40px;
+        z-index: 1;
+        position: relative;
     }
 
+    /* Botón estilo recorte de periódico */
     button {
-        background-color: #C3002F; /* Rojo más oscuro */
+        background-color: #C3002F;
         color: black;
         font-size: 28px;
         padding: 18px 90px;
-        border: none;
+        border: 4px solid black;
+        border-radius: 4px;
+        text-shadow: 1px 1px 0 #fff;
         cursor: pointer;
         letter-spacing: 3px;
-
-        /* Estilo Phantom */
-        transform: skewX(-10deg);
+        transform: skewX(-8deg);
         box-shadow: 6px 6px 0 black;
-
-        transition: transform 0.1s ease, background-color 0.2s ease;
+        transition: all 0.2s ease;
+        font-weight: bold;
     }
 
     button span {
         display: inline-block;
-        transform: skewX(10deg); /* corrige el texto */
+        transform: skewX(8deg);
     }
 
     button:hover {
         background-color: #A00025;
-        transform: skewX(-10deg) scale(1.05);
+        transform: skewX(-8deg) scale(1.05);
+        box-shadow: 8px 8px 0 black;
     }
 
-    /* Banda negra inferior */
-    .bottom-bar {
+    /* Top & Bottom bars */
+    .top-bar, .bottom-bar {
         width: 100%;
-        height: 25px;
+        height: 20px;
         background: black;
-        transform: skewY(2deg);
+        transform: skewY(-2deg);
+        z-index: 1;
+        position: relative;
     }
+    .bottom-bar { transform: skewY(2deg); }
+
 </style>
 </head>
 <body>
 
     <div class="top-bar"></div>
+
+    <!-- Líneas diagonales -->
+    <div class="diagonal"></div>
+    <div class="diagonal"></div>
+    <div class="diagonal"></div>
+    <div class="diagonal"></div>
 
     <!-- Imagen superior -->
     <img src="Phantom_Thieves_Logo.webp" alt="Phantom Thieves">
